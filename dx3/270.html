@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 30px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>270、在突发公共卫生事件一级响应期间，施工项目中如有出现发热干咳症状的疑似传染病病患，应主动如实报告，不得隐瞒行程。2020年 2 月，某市一工地发生聚集性感染事件，共有 4 名人员先后确诊为病毒性肺炎。公安局对该工地徐某以涉嫌（ ），被依法立案调查。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.诈骗罪<br>
+		<label><input type="radio" name="answer" value="B">B.以危害公共安全罪<br>
+		<label><input type="radio" name="answer" value="C">C.散播传染病罪<br>
+		<label><input type="radio" name="answer" value="D">D.妨害传染病防治罪<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "D") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是D。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "271.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

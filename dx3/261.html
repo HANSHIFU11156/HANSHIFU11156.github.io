@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 30px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>261、下列哪句话的描述不符合《中共中央国务院关于推进安全生产领域改革发展的意见》的表述（ ）。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.坚持安全发展，坚守发展决不能以牺牲安全为代价这条不可逾越的<br>
+		<label><input type="radio" name="answer" value="B">红线，以防范遏制一般性生产安全事故为重点<br>
+		<label><input type="radio" name="answer" value="C">B.坚持安全第一、预防为主、综合治理的方针<br>
+		<label><input type="radio" name="answer" value="D">C.着力强化企业安全生产主体责任，着力堵塞监督管理漏洞，着力解<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "决不遵守法律法规的问题") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是D.依靠严密的责任体系、严格的法治措施、有效的体制机制、有力的。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "基础保障和完善的系统治理，切实增强安全防范治理能力，大力提升.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
