@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 50px; }
+		p { font-size: 50px; }
+		label { font-size: 50px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 50px; }
+		button[id="next-btn"] { font-size: 50px; }
+	</style>
+</head>
+<body>
+	<h2>49、根据《建设工程安全生产管理条例》，建设单位应当向施工单位提供施工现场及毗邻区域内供水、排水、供电、供气、供热、通信、广播电视等地下管线资料，气象和水文观测资料，相邻建筑物和构筑物、地下工程的有关资料，并保证资料的（ ）。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.及时、真实、完备<br>
+		<label><input type="radio" name="answer" value="B">B.真实、完整、实时<br>
+		<label><input type="radio" name="answer" value="C">C.真实、准确、完整<br>
+		<label><input type="radio" name="answer" value="D">D.及时、准确、完整<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "C") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "50.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

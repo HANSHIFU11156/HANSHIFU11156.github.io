@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 50px; }
+		p { font-size: 50px; }
+		label { font-size: 50px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 50px; }
+		button[id="next-btn"] { font-size: 50px; }
+	</style>
+</head>
+<body>
+	<h2>18、《生产安全事故报告和调查处理条例》中规定，事故发生单位主要负责人有下列哪种行为的，需处上一年年收入 40%至 80%的罚款；属于国家工作人员的，并依法给予处分；构成犯罪的，依法追究刑事责任。（ ）</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.组织事故抢救不力的<br>
+		<label><input type="radio" name="answer" value="B">B.迟报或漏报事故的<br>
+		<label><input type="radio" name="answer" value="C">C.在事故调查中作伪证的<br>
+		<label><input type="radio" name="answer" value="D">D.阻碍、干涉事故调查工作的<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "B") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "19.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

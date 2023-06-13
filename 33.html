@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 50px; }
+		p { font-size: 50px; }
+		label { font-size: 50px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 50px; }
+		button[id="next-btn"] { font-size: 50px; }
+	</style>
+</head>
+<body>
+	<h2>33、对安全生产考核合格的，考核机关应当在（ ）个工作日内核发安全生产考核合格证书，并予以公告；对不合格的，应当通过“安管人员”所在企业通知本人并说明理由。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.10<br>
+		<label><input type="radio" name="answer" value="B">B.15<br>
+		<label><input type="radio" name="answer" value="C">C.20<br>
+		<label><input type="radio" name="answer" value="D">D.30<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "C") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "34.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
