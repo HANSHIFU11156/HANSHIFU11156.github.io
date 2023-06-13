@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 50px; }
+		p { font-size: 50px; }
+		label { font-size: 50px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 50px; }
+		button[id="next-btn"] { font-size: 50px; }
+	</style>
+</head>
+<body>
+	<h2>15、《建筑工程安全防护、文明施工措施费用及使用管理规定》规定，建设单位与施工单位在施工合同中对安全防护、文明施工措施费用预付、支付计划未作约定或约定不明的，合同工期在一年以上的（含一年），预付安全防护、文明施工措施费用不得低于该费用总额的（ ），其余费用应当按照施工进度支付。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.30%<br>
+		<label><input type="radio" name="answer" value="B">B.40%<br>
+		<label><input type="radio" name="answer" value="C">C.50%<br>
+		<label><input type="radio" name="answer" value="D">D.70%<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "16.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

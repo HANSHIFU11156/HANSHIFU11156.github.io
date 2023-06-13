@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 50px; }
+		p { font-size: 50px; }
+		label { font-size: 50px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 50px; }
+		button[id="next-btn"] { font-size: 50px; }
+	</style>
+</head>
+<body>
+	<h2>21、《中华人民共和国建筑法》规定，建筑工程开工前，建设单位应当按照国家有关规定向工程所在地县级以上人民政府建设行政主管部门申请领取（ ）；但是，国务院建设行政主管部门确定的限额以下的小型工程除外。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.安全生产许可证<br>
+		<label><input type="radio" name="answer" value="B">B.规划许可证<br>
+		<label><input type="radio" name="answer" value="C">C.施工许可证<br>
+		<label><input type="radio" name="answer" value="D">D.排污许可证<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "C") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "22.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
