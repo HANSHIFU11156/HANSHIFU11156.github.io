@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 50px; }
+		p { font-size: 50px; }
+		label { font-size: 50px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 50px; }
+		button[id="next-btn"] { font-size: 50px; }
+	</style>
+</head>
+<body>
+	<h2>119、违反《建设工程安全生产管理条例》的规定，工程监理单位未对施工组织设计中的安全技术措施或者专项施工方案进行审查的，责令限期改正；逾期未改正的，责令停业整顿，并处（ ）万元以上（ ）万元以下的罚款；情节严重的，降低资质等级，直至吊销资质证书；造成重大安全事故，构成犯罪的，对直接责任人员，依照刑法有关规定追究刑事责任；造成损失的，依法承担赔偿责任。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.10；30<br>
+		<label><input type="radio" name="answer" value="B">B.20；30<br>
+		<label><input type="radio" name="answer" value="C">C.10；50<br>
+		<label><input type="radio" name="answer" value="D">D.20；50<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "120.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

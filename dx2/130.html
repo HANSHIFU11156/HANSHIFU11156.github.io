@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 50px; }
+		p { font-size: 50px; }
+		label { font-size: 50px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 50px; }
+		button[id="next-btn"] { font-size: 50px; }
+	</style>
+</head>
+<body>
+	<h2>130、项目专职安全生产管理人员应当每天在施工现场开展安全检查，现场监督危险性较大的分部分项工程安全专项施工方案实施。对检查中发现的安全事故隐患，应当立即处理；不能处理的，应当及时报告（ ）和（ ）。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.项目管理人；企业安全生产管理机构<br>
+		<label><input type="radio" name="answer" value="B">B.项目负责人；企业安全生产管理机构<br>
+		<label><input type="radio" name="answer" value="C">C.项目监理人；企业监理管理机构<br>
+		<label><input type="radio" name="answer" value="D">D.项目管理人；企业安全管理机构<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "B") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "131.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
