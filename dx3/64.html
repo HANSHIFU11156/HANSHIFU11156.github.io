@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试题目</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 30px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>64、根据生产安全事故造成的人员伤亡或者直接经济损失，下列对事故划分等级错误的是（ ）。</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.特别重大事故；是指造成 30 人以上死亡；或者 100 人以上重伤（包<br>
+		<label><input type="radio" name="answer" value="B">括急性工业中毒；下同）；或者 1 亿元以上直接经济损失的事故<br>
+		<label><input type="radio" name="answer" value="C">B.重大事故；是指造成 10 人以上 30 人以下死亡；或者 50 人以上 100<br>
+		<label><input type="radio" name="answer" value="D">人以下重伤；或者 5000 万元以上 1 亿元以下直接经济损失的事故<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "C.较大事故；是指造成 3 人以上 10 人以下死亡；或者 11 人以上 50") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是人以下重伤；或者 1000 万元以上 5000 万元以下直接经济损失的事故。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "D.一般事故；是指造成 3 人以下死亡；或者 10 人以下重伤；或者 1000.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
