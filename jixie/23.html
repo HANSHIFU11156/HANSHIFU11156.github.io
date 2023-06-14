@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,14 +18,14 @@
 	</style>
 </head>
 <body>
-	<h2>23、根据《广东省房屋市政工程文明施工工作导则（试行）》规定，
-临近机动车道的围挡应设置防撞杆，按交通相关管理规定设置（ ）。
+	<h2>23、施工升降机的拆卸中，吊笼未拆除之前，（ ）不得在地面防护
+围栏内、施工升降机运行通道内、导轨架内以及附墙架上等区域活动。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.安全提示标志<br>
-		<label><input type="radio" name="answer" value="B">B.夜间反光警示标志<br>
-		<label><input type="radio" name="answer" value="C">C.安全标志<br>
-		<label><input type="radio" name="answer" value="D">D.安全警示标志<br>
+		<label><input type="radio" name="answer" value="A">A.非拆卸作业人员<br>
+		<label><input type="radio" name="answer" value="B">B.任何人<br>
+		<label><input type="radio" name="answer" value="C">C.非施工员<br>
+		<label><input type="radio" name="answer" value="D">D.非安全员<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -35,10 +35,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "B") {
+			if (form.elements["answer"].value == "A") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

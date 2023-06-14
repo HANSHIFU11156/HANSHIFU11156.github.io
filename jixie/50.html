@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,13 +18,13 @@
 	</style>
 </head>
 <body>
-	<h2>50、下列哪一个是施工现场水污染防治措施的内容（ ）。
+	<h2>50、关于吊篮的安全技术措施正确的是（ ）。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.路面及其余场地地面要硬化<br>
-		<label><input type="radio" name="answer" value="B">B.禁止将有毒有害废弃物用作土方回填<br>
-		<label><input type="radio" name="answer" value="C">C.施工现场办公室、仓库等；保持清洁卫生；建立卫生区域经常打扫<br>
-		<label><input type="radio" name="answer" value="D">D.严禁在工程室内用有机溶剂清洗施工用具<br>
+		<label><input type="radio" name="answer" value="A">A.可以 2 人同时作业<br>
+		<label><input type="radio" name="answer" value="B">B.安全钢丝绳设置在吊篮上<br>
+		<label><input type="radio" name="answer" value="C">C.从建筑物顶部进入吊篮<br>
+		<label><input type="radio" name="answer" value="D">D.用吊篮运送物料<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -34,10 +34,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "B") {
+			if (form.elements["answer"].value == "A") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

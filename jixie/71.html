@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,15 +18,14 @@
 	</style>
 </head>
 <body>
-	<h2>71、某交通运输股份有限公司的组织机构包括董事会，监事会、工会、
-总工办、调度室、安全处、财务处等。公司设总经理、安全总监等管
-理岗位。根据有关规定，该公司安全生产投入资金予以决策的是（ ）。
+	<h2>71、空气压缩机每工作（ ）需将油水分离器、中间冷却器、后冷却
+器内的油水排放一次。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.董事会<br>
-		<label><input type="radio" name="answer" value="B">B.董事长<br>
-		<label><input type="radio" name="answer" value="C">C.总经理<br>
-		<label><input type="radio" name="answer" value="D">D.安全总监<br>
+		<label><input type="radio" name="answer" value="A">A.1 小时<br>
+		<label><input type="radio" name="answer" value="B">B.2 小时<br>
+		<label><input type="radio" name="answer" value="C">C.3 小时<br>
+		<label><input type="radio" name="answer" value="D">D.4 小时<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -36,10 +35,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "A") {
+			if (form.elements["answer"].value == "B") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

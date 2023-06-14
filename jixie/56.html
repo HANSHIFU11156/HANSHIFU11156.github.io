@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,14 +18,15 @@
 	</style>
 </head>
 <body>
-	<h2>56、由政府建设行政主管部门对施工企业实施的安全生产评价，称为
-（ ）。
+	<h2>56、进行机械维修保养时，必须先拉闸切断电源，拔去电源插头，锁
+好开关箱，挂上（ ）标志，方可检修。入筒内检修时外面必须派专
+人监护。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.第一方评价<br>
-		<label><input type="radio" name="answer" value="B">B.第二方评价<br>
-		<label><input type="radio" name="answer" value="C">C.第三方评价<br>
-		<label><input type="radio" name="answer" value="D">D.上级督查<br>
+		<label><input type="radio" name="answer" value="A">A.“有人维修，严禁合闸”<br>
+		<label><input type="radio" name="answer" value="B">B.“有人维修，切勿打扰”<br>
+		<label><input type="radio" name="answer" value="C">C.“严禁靠近，有人维修”<br>
+		<label><input type="radio" name="answer" value="D">D.“切勿惊扰，严禁合闸”<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -35,10 +36,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "B") {
+			if (form.elements["answer"].value == "A") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,13 +18,13 @@
 	</style>
 </head>
 <body>
-	<h2>11、安全平网宽度不应小于（ ）m。
+	<h2>11、多台机械开挖，挖掘机间距应大于（ ）。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.3<br>
-		<label><input type="radio" name="answer" value="B">B.4<br>
-		<label><input type="radio" name="answer" value="C">C.5<br>
-		<label><input type="radio" name="answer" value="D">D.6<br>
+		<label><input type="radio" name="answer" value="A">A.5m<br>
+		<label><input type="radio" name="answer" value="B">B.10m<br>
+		<label><input type="radio" name="answer" value="C">C.15m<br>
+		<label><input type="radio" name="answer" value="D">D.20m<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -34,10 +34,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "A") {
+			if (form.elements["answer"].value == "B") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

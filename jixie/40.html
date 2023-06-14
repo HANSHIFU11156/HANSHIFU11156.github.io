@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,14 +18,13 @@
 	</style>
 </head>
 <body>
-	<h2>40、为保证施工现场交叉作业安全，下层作业位置应处于上层作业的
-坠落半径之外。在高度 24m 的楼层作业面施工时，其坠落半径是（ ）。
+	<h2>40、风速仪应安装在起重机顶部至吊具的（ ）位置。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.3m<br>
-		<label><input type="radio" name="answer" value="B">B.4m<br>
-		<label><input type="radio" name="answer" value="C">C.5m<br>
-		<label><input type="radio" name="answer" value="D">D.6m<br>
+		<label><input type="radio" name="answer" value="A">A.中间部位<br>
+		<label><input type="radio" name="answer" value="B">B.最高的位置间的不挡风处<br>
+		<label><input type="radio" name="answer" value="C">C.最高的位置间的挡风处<br>
+		<label><input type="radio" name="answer" value="D">D.最高位置<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -35,10 +34,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "C") {
+			if (form.elements["answer"].value == "B") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,15 +18,13 @@
 	</style>
 </head>
 <body>
-	<h2>92、生产经营单位的（ ）、主要负责人或者个人经营的投资人不依照
-本法规定保证安全生产所必需的资金投入，致使生产经营单位不具备
-安全生产条件的，责令限期改正，提供必需的资金。
+	<h2>92、以下不属于起重吊装作业人员的行为有（ ）。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.控制机构<br>
-		<label><input type="radio" name="answer" value="B">B.执行机构<br>
-		<label><input type="radio" name="answer" value="C">C.决策机构<br>
-		<label><input type="radio" name="answer" value="D">D.行政机构<br>
+		<label><input type="radio" name="answer" value="A">A.负责载荷计算和索具的正确选择<br>
+		<label><input type="radio" name="answer" value="B">B.对可能出现的事故采取必要的防范措施<br>
+		<label><input type="radio" name="answer" value="C">C.佩戴鲜明的标志和特殊颜色的安全帽<br>
+		<label><input type="radio" name="answer" value="D">D.建议起重司机对手柄的选择<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -36,10 +34,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "C") {
+			if (form.elements["answer"].value == "D") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是D。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

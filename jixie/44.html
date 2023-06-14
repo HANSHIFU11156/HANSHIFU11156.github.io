@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,14 +18,13 @@
 	</style>
 </head>
 <body>
-	<h2>44、通过教学、讲座、讲演、经验介绍、现身说法、演讲比赛的安全
-教育形式属于（ ）。
+	<h2>44、中型塔式起重机的起重量一般为（ ）。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.广告宣传式<br>
-		<label><input type="radio" name="answer" value="B">B.声像式<br>
-		<label><input type="radio" name="answer" value="C">C.演讲式<br>
-		<label><input type="radio" name="answer" value="D">D.文艺演出式<br>
+		<label><input type="radio" name="answer" value="A">A.0.3-3t<br>
+		<label><input type="radio" name="answer" value="B">B.3-5t<br>
+		<label><input type="radio" name="answer" value="C">C.5-20t<br>
+		<label><input type="radio" name="answer" value="D">D.20-40t<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -35,10 +34,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "C") {
+			if (form.elements["answer"].value == "B") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

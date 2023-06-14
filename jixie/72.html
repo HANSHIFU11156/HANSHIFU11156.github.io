@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,16 +18,15 @@
 	</style>
 </head>
 <body>
-	<h2>72、甲公司拟投资建设一大型商业综合体项目，由乙公司总承包，乙
-公司将土石方工程发包给丙公司，结构和给排水机电工程发包给丁公
-司。施工过程中，实施该建设项目的安全生产工作统一协调、管理的
-单位是（ ）。
+	<h2>72、水磨石机宜在混凝土达到设计强度（ ）时进行磨削作业。作业
+前，应检查并确认各连接件是否紧固，当用木槌轻击磨石发出无裂纹
+的清脆声音时，方可作业。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.乙<br>
-		<label><input type="radio" name="answer" value="B">B.甲<br>
-		<label><input type="radio" name="answer" value="C">C.丙<br>
-		<label><input type="radio" name="answer" value="D">D.丁<br>
+		<label><input type="radio" name="answer" value="A">A.50%-60%<br>
+		<label><input type="radio" name="answer" value="B">B.60%-70%<br>
+		<label><input type="radio" name="answer" value="C">C.70%-80%<br>
+		<label><input type="radio" name="answer" value="D">D.80%-90%<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -37,10 +36,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "B") {
+			if (form.elements["answer"].value == "C") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

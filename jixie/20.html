@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,16 +18,13 @@
 	</style>
 </head>
 <body>
-	<h2>20、根据《广东省房屋市政工程文明施工工作导则（试行）》，建筑施
-工企业应当对工地泥浆（包括车辆清洗产生的泥浆）进行（ ）沉淀
-后再予以排放，对废弃油料、化学溶剂实行集中处理，禁止直接将工
-地泥浆、废弃油料、化学溶剂排入城市排水管网或者河道。
+	<h2>20、缆风绳宜设在物料提升机导轨架的（ ）。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.一级<br>
-		<label><input type="radio" name="answer" value="B">B.二级<br>
-		<label><input type="radio" name="answer" value="C">C.三级<br>
-		<label><input type="radio" name="answer" value="D">D.四级<br>
+		<label><input type="radio" name="answer" value="A">A.顶部<br>
+		<label><input type="radio" name="answer" value="B">B.中间<br>
+		<label><input type="radio" name="answer" value="C">C.底部<br>
+		<label><input type="radio" name="answer" value="D">D.以上皆可<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -37,10 +34,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "C") {
+			if (form.elements["answer"].value == "A") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

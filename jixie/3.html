@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,14 +18,13 @@
 	</style>
 </head>
 <body>
-	<h2>3、（ ）的基本含义是提醒人们对周围环境引起注意，以避免发生危
-险的图形标志。
+	<h2>3、若按回转方式划分，塔式起重机可以分为（ ）。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.禁止标志<br>
-		<label><input type="radio" name="answer" value="B">B.警示标志<br>
-		<label><input type="radio" name="answer" value="C">C.指示标志<br>
-		<label><input type="radio" name="answer" value="D">D.警告标志<br>
+		<label><input type="radio" name="answer" value="A">A.动臂式、运行小车式<br>
+		<label><input type="radio" name="answer" value="B">B.轻型式、中型式、重型式<br>
+		<label><input type="radio" name="answer" value="C">C.上回转式、下回转式<br>
+		<label><input type="radio" name="answer" value="D">D.自行式、全回转式<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -35,10 +34,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "B") {
+			if (form.elements["answer"].value == "C") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;

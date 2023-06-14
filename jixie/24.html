@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>单选题_（安全管理）</title>
+	<title>单选题_（机械设备安全技术）</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -18,16 +18,14 @@
 	</style>
 </head>
 <body>
-	<h2>24、根据《广东省在建房屋市政工程防御台风、暴雨灾害工作指引（试
-行）》规定，台风橙色或红色预警时，下列做法正确的是（ ）。
+	<h2>24、施工升降机在使用期间，（ ）应每月组织专业技术人员对施工
+升降机进行检查，并对检查结果进行记录。
 </h2>
 	<form onsubmit="return checkAnswer();" method="post" id="myForm">
-		<label><input type="radio" name="answer" value="A">A.检查外墙脚手架、模板支撑体系、卸料平台、防护棚、临时用电设
-施等；是否采取了防风防雨加固措施<br>
-		<label><input type="radio" name="answer" value="B">B.停止所有高空施工作业；如排查隐患所需的；应釆取合理、可靠的
-防护措施后方可作业<br>
-		<label><input type="radio" name="answer" value="C">C.停止所有露天作业；切断施工电源；撤离危险地带人员<br>
-		<label><input type="radio" name="answer" value="D">D.停止一切施工作业；关闭施工现场临时用电总闸<br>
+		<label><input type="radio" name="answer" value="A">A.建设单位<br>
+		<label><input type="radio" name="answer" value="B">B.监理单位<br>
+		<label><input type="radio" name="answer" value="C">C.使用单位<br>
+		<label><input type="radio" name="answer" value="D">D.安装单位<br>
 		<label><button type="submit">提交</button>
 		<button id="next-btn" onclick="nextQuestion();">下一题</button>
 	</form>
@@ -37,10 +35,10 @@
 		function checkAnswer() {
 			event.preventDefault();
 			var form = document.getElementById("myForm");
-			if (form.elements["answer"].value == "D") {
+			if (form.elements["answer"].value == "C") {
 				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
 			} else {
-				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是D。</span>";
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
 			}
 			form.elements["answer"].checked = false;
 			return false;
