@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（安全管理）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>194、干粉灭火器以液态二氧化碳或氮气作动力，将灭火器内干粉灭
+火剂喷出进行灭火，干粉灭火器按使用范围可分为普通干粉(BC 干粉)
+灭火器和多用干粉(ABC 干粉)灭火器两大类。其中，ABC 干粉灭火器
+不能扑救（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.镁粉火灾<br>
+		<label><input type="radio" name="answer" value="B">B.柴油火灾<br>
+		<label><input type="radio" name="answer" value="C">C.甲烷火灾<br>
+		<label><input type="radio" name="answer" value="D">D.电缆火灾<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "195.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

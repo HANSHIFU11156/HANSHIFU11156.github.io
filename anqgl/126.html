@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（安全管理）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>126、某大型仓储企业有闲置厂房多处，为盘活固定资产对外出租闲
+置厂房，依据《安全生产法》的规定，下列做法正确的是？（ ）
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.将某闲置厂房出租给某保险公司作营业用房，考虑到保险公司业务
+特点，在租赁合同中对双方安全职责未做明确规定<br>
+		<label><input type="radio" name="answer" value="B">B.将闲置厂房出租给某矿山企业存放民用爆炸物品，并与该企业签订
+专门的安全生产管理协议，约定由该企业全权负责安全管理并承担安
+全责任<br>
+		<label><input type="radio" name="answer" value="C">C.将某闲置厂房出租给某大型连锁超市，双方签订专门的安全生产管
+理协议，规定出租方不承担对该连锁超市安全生产检查的责任<br>
+		<label><input type="radio" name="answer" value="D">D.将某闲置厂房出租给某物流公司，在租赁合同中明确双方安全职责，
+并按照合同约定由出租方定期对该公司进行安全检查，发现安全问题
+时及时督促整改<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "D") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是D。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "127.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

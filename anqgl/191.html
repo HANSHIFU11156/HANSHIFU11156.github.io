@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（安全管理）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>191、有限空间由于自然通风不良存在氧含量不足、有毒有害和易燃
+易爆气体积聚等危险有害因素。关于有限空间危险有害因素及其危害
+的说法，错误的是（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.一氧化碳极易与血红蛋白结合，使血红蛋自丧失携氧的能力和作用，
+造成组织室息，严重时死亡<br>
+		<label><input type="radio" name="answer" value="B">B.二氧化碳是无色剧毒气体，吸入高浓度二氧化碳会出现昏迷、四肢
+抽搐、大小便失禁，重者可室息死亡<br>
+		<label><input type="radio" name="answer" value="C">C.甲烷易燃，爆炸极限为 5%-15%,与空气混合能形成爆炸性混合物，
+遇热源和明火有燃烧爆炸的危险<br>
+		<label><input type="radio" name="answer" value="D">D.氧含量(体积百分比浓度)10%-12%时，对人体产生的影响是呼吸加
+深加快，几乎丧失判断能力，嘴唇发紫<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "B") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "192.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

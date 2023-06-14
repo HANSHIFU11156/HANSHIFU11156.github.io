@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（安全管理）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>145、施工企业安全生产文明施工动态管理行为的考核评价应符合下
+列哪个选项（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.企业资质因安全生产、文明施工受到降级处罚的，则该项不应得分<br>
+		<label><input type="radio" name="answer" value="B">B.未建立安全检查检验仪器、仪表及工具配备制度的，则该项不应得
+分<br>
+		<label><input type="radio" name="answer" value="C">C.安全质量标准化年度达标优良率低于国家或地方规定的，应根据具
+体情况评定折减分数<br>
+		<label><input type="radio" name="answer" value="D">D.实行分包的，总承包单位未制定对分包单位资质和人员资格管理制
+度并监督落实的，则该项不应得分<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "146.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
