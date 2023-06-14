@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>判断题_（安全管理）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 30px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>316、体外心脏按压法操作方法中，抢救者以一手掌根部置于伤员胸
+骨下 2/3 段，即中指对准其颈部凹陷的下缘，另一手掌交叉重叠于该
+手背上，肘关节伸直，依靠体重和臂、肩部肌肉的力量，垂直用力，
+向脊柱方向冲击性地用力施压胸骨下段，使胸骨下段与其相连的肋骨
+下陷 3~4cm，间接压迫心脏，使心脏内血液搏出。（ ）
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.正确</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.错误</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "B") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "317.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>
