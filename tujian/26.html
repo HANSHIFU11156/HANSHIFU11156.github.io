@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（土建综合安全技术）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>26、某工程施工期间，施工单位在施工现场显著位置对危险性较大的
+分部分项工程进行公告。下列分部分项工程中，属于超过一定规模的
+危险性较大的分部分项工程的是（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.施工高度 40m 的建筑幕墙安装工程<br>
+		<label><input type="radio" name="answer" value="B">B.跨度 30m 的网架和索膜结构安装工程<br>
+		<label><input type="radio" name="answer" value="C">C.开挖深度 18m 的人工挖孔桩工程<br>
+		<label><input type="radio" name="answer" value="D">D.提升高度 90m 的附着式升降脚手架工程<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "C") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "27.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
