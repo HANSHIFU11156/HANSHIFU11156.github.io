@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（机械设备安全技术）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>213、关于钢筋对焊机，下列说法正确的是（ ）。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.焊接较长钢筋时，应设置活动支架，配合搬运的操作人员应站在火
+花喷射范围以外，防止火花伤人</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.作业后或停电时，必须拉闸切断电源，放尽机内冷却水，收拾好夹
+具和工具，清扫车间（或工场），并对设备进行清洁和保养</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.发现焊头漏电时禁止使用，并立即拉闸断电，进行更换</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.已焊接好的钢筋，应按其规格长度堆放整齐，挂上标签，并不得靠
+近易燃物品</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.闪光区应设挡板，焊接时无关人员不得入内</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "ABCDE") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是ABCDE。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "214.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（机械设备安全技术）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>206、关于打夯机，下列说法正确的是（ ）。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.负荷线应采用耐气候型的四芯橡皮护套软电缆。电缆线长应不大于
+50m</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.作业时打夯机扶手上的按钮开关和电动机的接线均应绝缘良好。当
+发现有漏电现象时，应立即切断电源，进行检修。</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.作业时，应防止电缆线被夯击。移动时，应将电缆线移至夯机后方，
+不得隔机抢扔电缆线，当转向倒线困难时，应停机调整。</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.作业时，手握扶手应保持机身平衡，不得用力向后压，并应随时调
+整行进方向。</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.在建筑物内部作业时，夯板或偏心块不得打在墙壁上。</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "ABCDE") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是ABCDE。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "207.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>
