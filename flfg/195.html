@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（法律法规）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>195、《建筑施工企业安全生产管理机构设置及专职安全生产管理人员
+配备办法》规定，下列中符合建筑施工企业安全生产管理机构专职安
+全生产管理人员的配备要求的是：（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.建筑施工劳务分包资质序列企业：不少于 2 人<br>
+		<label><input type="radio" name="answer" value="B">B.建筑施工专业承包资质序列企业：一级资质不少于 4 人；二级和二
+级以下资质企业不少于 2 人<br>
+		<label><input type="radio" name="answer" value="C">C.建筑施工总承包资质序列企业：特级资质不少于 9 人；一级资质不
+少于 5 人；二级和二级以下资质企业不少于 3 人<br>
+		<label><input type="radio" name="answer" value="D">D.建筑施工企业的分公司、区域公司等较大的分支机构（以下简称分
+支机构）应依据实际生产情况配备不少于 4 人的专职安全生产管理人
+员<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "196.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

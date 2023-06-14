@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（法律法规）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>122、违反《建设工程安全生产管理条例》的规定，为建设工程提供
+机械设备和配件的单位，未按照安全施工的要求配备齐全有效的保险、
+限位等安全设施和装置的，责令限期改正，处合同价款（ ）的罚款；
+造成损失的，依法承担赔偿责任。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.１倍以上 2 倍以下<br>
+		<label><input type="radio" name="answer" value="B">B.2 倍以上 10 倍以下<br>
+		<label><input type="radio" name="answer" value="C">C.2 倍以上 5 倍以下<br>
+		<label><input type="radio" name="answer" value="D">D.１倍以上３倍以下<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "D") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是D。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "123.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
