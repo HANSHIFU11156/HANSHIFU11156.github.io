@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（安全管理）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>73、甲公司实施一项大型技改项目，拟将与该项目配套的办公楼、工
+艺楼建设项目等发包给乙公司。按照相关要求，甲公司安全管理部门
+对乙公司进行了安全资质审查。下列乙公司提供的安全资质审查资料
+中，符合要求的是（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.法定代表人证明书、安全生产许可证、主要负责人安全生产考核合
+格证书、近两年的安全业绩<br>
+		<label><input type="radio" name="answer" value="B">B.法定代表人证明书、安全生产许可证、安全管理体系程序文件及有
+效评审报告、近两年的安全业绩<br>
+		<label><input type="radio" name="answer" value="C">C.特种作业证书、安全生产许可证、主要负责人安全生产考核合格证
+书、近两年的安全业绩<br>
+		<label><input type="radio" name="answer" value="D">D.安全生产许可证、主要负责人安全资格证书、安全管理体系有效评
+审报告、近两年的安全业绩<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "D") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是D。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "74.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
