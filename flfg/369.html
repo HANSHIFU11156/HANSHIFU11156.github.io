@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（法律法规）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>369、根据《建设工程安全生产管理条例》第六十六条规定，施工单
+位的主要负责人、项目负责人有前款违法行为，尚不够刑事处罚的，
+处（ ）或者按照管理权限给予撤职处分；自刑罚执行完毕或者受处
+分之日起，5 年内不得担任任何施工单位的主要负责人、项目负责人。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.2 万元以上 20 万元以下的罚款<br>
+		<label><input type="radio" name="answer" value="B">B.5 万元以上 20 万元以下的罚款<br>
+		<label><input type="radio" name="answer" value="C">C.5 万元以上 10 万元以下的罚款<br>
+		<label><input type="radio" name="answer" value="D">D.2 万元以上 10 万元以下的罚款<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "370.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

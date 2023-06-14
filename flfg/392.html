@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（法律法规）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>392、根据《建设工程安全生产管理条例》，下列说法不正确的是（ ）。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.发包人可以任意压缩合同约定的工期</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.建设单位在申请领取施工许可证时，应当提供建设工程有关安全施
+工措施的资料</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.建设单位在编制工程概算时，应当确定建设工程安全作业环境及安
+全施工措施所需费用</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.建设工程安全生产管理，坚持质量第一、预防为主的方针</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.建设单位应当向施工单位提供施工现场资料，并保证资料的真实、
+准确、完整</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "AD") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是AD。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "393.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>

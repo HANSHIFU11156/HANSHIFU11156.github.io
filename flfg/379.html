@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（法律法规）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>379、《建筑起重机械安全监督管理规定》，使用单位应当履行下列安
+全职责：（ ）。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.根据不同施工阶段、周围环境以及季节、气候的变化，对建筑起重
+机械采取相应的安全防护措施</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.制定建筑起重机械生产安全事故应急救援预案</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.在建筑起重机械活动范围内设置明显的安全警示标志，对集中作业
+区做好安全防护</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.设置相应的设备管理机构或者配备专职的设备管理人员</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.建筑起重机械出现故障或者发生异常情况的，立即停止使用，消除故障和事故隐患后，方可重新投入使用</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "ABCDE") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是ABCDE。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "380.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>

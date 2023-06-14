@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（法律法规）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>393、根据《建设工程安全生产管理条例》下列说法正确的是（ ）。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.工程监理单位应当审查施工组织设计中的安全技术措施或者专项
+施工方案是否符合工程建设强制性标准</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.设计单位和注册建筑师等注册执业人员应当对其设计负责</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.工程监理单位在实施监理过程中，发现存在安全隐患的，应当要求
+施工单位整改；情况严重的，应及时报告建设单位，但没有权利要求
+施工单位暂时停止施工</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.工程监理单位在实施监理过程中，发现承包人的施工进度计划不符
+合合同要求的，应责令修改后重新提交</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.工程监理单位和监理工程师应当按照法律、法规和工程建设强制性
+标准实施监理，并对建设工程安全生产承担监理责任</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "ABDE") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是ABDE。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "394.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>

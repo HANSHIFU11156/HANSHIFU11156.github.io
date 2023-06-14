@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（法律法规）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>312、小王和小李是某机械厂机修车间的两名焊工，从事压力焊作业。
+因工作需要，两人被调至该厂的其他岗位，小王做了 4 个月的质量管
+理工作，小李做了 9 个月的安全管理工作。小王和小李重回机修车间
+从事压力焊工作，两人的特种作业操作证书都在有效期内。根据《特
+种作业人员安全技术培训考核管理规定》，关于小王和小李重新从事
+压力焊作业的说法，正确的是（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.小王和小李的特种作业操作证书都在有效期内，两人都可以直接上
+岗<br>
+		<label><input type="radio" name="answer" value="B">B.小王和小李都应当参加特种作业实际操作考试，经确认合格后方可
+上岗<br>
+		<label><input type="radio" name="answer" value="C">C.小王可以直接上岗，小李应当参加特种作业实际操作考试，经确认
+合格后方可上岗<br>
+		<label><input type="radio" name="answer" value="D">D.小王和小李都应当参加特种作业安全技术理论和实际操作考试，经
+确认合格后方可上岗<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "C") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "313.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

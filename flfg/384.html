@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（法律法规）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>384、《中华人民共和国特种设备安全法》规定，负责特种设备安全监
+督管理的部门在依法履行监督检查职责时，可以行使下列职权：（ ）。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.对流入市场的达到报废条件或者已经报废的特种设备实施查封、扣
+押</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.进入现场进行检查，向特种设备生产、经营、使用单位和检验、检
+测机构的主要负责人和其他有关人员调查、了解有关情况</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.根据举报或者取得的涉嫌违法证据，查阅、复制特种设备生产、经
+营、使用单位和检验、检测机构的有关合同、发票、账簿以及其他有
+关资料</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.对有证据表明不符合安全技术规范要求或者存在严重事故隐患的
+特种设备实施查封、扣押</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.对违反本法规定的行为作出行政处罚决定</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "ABCDE") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是ABCDE。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "385.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>

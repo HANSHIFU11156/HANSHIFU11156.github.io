@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（法律法规）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>395、根据《特种设备安全监察条例》规定，已经取得许可、核准的
+特种设备生产单位、检验检测机构有下列行为之一的（ ），由特种设
+备安全监督管理部门责令改正，处 2 万元以上 10 万元以下罚款；情
+节严重的，撤销其相应资格。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.未按照安全技术规范的要求办理许可证变更手续的</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.使用未经定期检验或者检验不合格的特种设备的</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.伪造、变造、出租、出借、转让许可证书或者监督检验报告的</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.未依照《特种设备安全监察条例》规定或者安全技术规范要求进行
+特种设备生产、检验检测的</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.未制定特种设备事故应急专项预案的</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "ACD") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是ACD。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "396.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>
