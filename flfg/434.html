@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（法律法规）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>434、根据《建设工程安全生产管理条例》，下列说法正确的是（ ）。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.施工单位应根据不同施工阶段和周围环境及季节、气候的变化，在
+施工现场采取相应的安全施工措施</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.施工现场暂时停止施工的，施工单位应当做好现场防护，所需费用
+由施工方承担，或者按照合同约定执行</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.建设工程施工前，施工单位负责项目管理的技术人员应当对有关安
+全施工的技术要求向施工作业班组、作业人员作出详细说明，并由双
+方签字确认</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.意外伤害保险期限自建设工程开工之日起至竣工结算时止</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.施工单位应当将施工现场的办公、生活区与作业区分开设置，并保
+持安全距离</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "ACE") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是ACE。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "435.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>

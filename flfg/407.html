@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多选题_（法律法规）</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h2 { font-size: 24px; }
+    p { font-size: 30px; }
+    label { font-size: 24px; }
+    input[type="checkbox"] {
+      font-size: 70px;
+      transform: scale(2); /* 将按钮缩放为原来的两倍 */
+      margin-right: 10px; /* 调整按钮之间的距离 */
+    }
+    button[type="button"] { font-size: 30px; }
+    button[id="next-btn"] { font-size: 30px; }
+  </style>
+</head>
+<body>
+  <h2>407、违反《中华人民共和国特种设备安全法》规定，特种设备使用
+单位有下列行为之一的（ ），责令限期改正；逾期未改正的，责令停
+止使用有关特种设备，处一万元以上十万元以下罚款。
+</h2>
+  <form onsubmit="return false;" method="post" id="myForm">
+    <label><input type="checkbox" name="answers[]" value="A">A.使用未取得许可生产，未经检验或者检验不合格的特种设备的</label><br>
+    <label><input type="checkbox" name="answers[]" value="B">B.未对其使用的特种设备进行经常性维护保养和定期自行检查，或者
+未对其使用的特种设备的安全附件、安全保护装置进行定期校验、检
+修，并作出记录的</label><br>
+    <label><input type="checkbox" name="answers[]" value="C">C.未按照安全技术规范的要求及时申报并接受检验的</label><br>
+    <label><input type="checkbox" name="answers[]" value="D">D.使用国家明令淘汰、已经报废的特种设备，或者未按照安全技术规
+范的要求进行维护保养的特种设备的</label><br>
+    <label><input type="checkbox" name="answers[]" value="E">E.未按照安全技术规范的要求进行锅炉水（介）质处理的</label><br>
+    <label><button type="button" onclick="checkAnswer();">提交</button>
+    <button id="next-btn" onclick="nextQuestion();">下一题</button>
+  </form>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    function checkAnswer() {
+      event.preventDefault();
+      var form = document.getElementById("myForm");
+      var userAnswers = form.elements["answers[]"];
+      if (getUserInput(userAnswers) == "BCE") {
+        document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+      } else {
+        document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是BCE。</span>";
+      }
+      for (var i = 0; i < userAnswers.length; i++) {
+        userAnswers[i].checked = false;
+      }
+      return false;
+    }
+    function nextQuestion() {
+      location.href = "408.html"; // 跳转到下一题的网页地址
+    }
+    function getUserInput(inputs) {
+      var result = "";
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          result += inputs[i].value;
+        }
+      }
+      return result;
+    }
+  </script>
+</body>
+</html>
