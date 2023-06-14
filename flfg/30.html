@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（法律法规）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>30、垂直运输机械作业人员、安装拆卸工、爆破作业人员、起重信号
+工、登高架设作业人员等特种作业人员，必须按照国家有关规定经过
+（ ），并取得特种作业操作资格证书后，方可上岗作业。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.三级教育<br>
+		<label><input type="radio" name="answer" value="B">B.专门的安全作业培训<br>
+		<label><input type="radio" name="answer" value="C">C.安全常识培训<br>
+		<label><input type="radio" name="answer" value="D">D.安全技术交底<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "B") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "31.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

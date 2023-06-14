@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（法律法规）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>40、根据《工伤保险条例》，下列描述不正确的是（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.职工发生工伤；经治疗伤情相对稳定后存在残疾、影响劳动能力的；
+应当进行劳动能力鉴定<br>
+		<label><input type="radio" name="answer" value="B">B.劳动能力鉴定是指劳动功能障碍程度和生活自理障碍程度的等级
+鉴定<br>
+		<label><input type="radio" name="answer" value="C">C.劳动功能障碍分为十个伤残等级；最重的为十级；最轻的为一级<br>
+		<label><input type="radio" name="answer" value="D">D.劳动能力鉴定标准由国务院社会保险行政部门会同国务院卫生行
+政部门等部门制定<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "C") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是C。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "41.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
