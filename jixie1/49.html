@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（机械设备安全技术）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>49、起重机的安全操作是防止起重伤害的重要保证，下列起重机的安
+全操作要求中，错误的是（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.开机作业前，确认所有控制器置于零位<br>
+		<label><input type="radio" name="answer" value="B">B.正常作业时，可利用极限位置限制器停车<br>
+		<label><input type="radio" name="answer" value="C">C.吊载接近或达到额定值，要利用小高度.短行程试吊<br>
+		<label><input type="radio" name="answer" value="D">D.对于紧急停止信号，无论任何人发出，都必须立即执行<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "B") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是B。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "50.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

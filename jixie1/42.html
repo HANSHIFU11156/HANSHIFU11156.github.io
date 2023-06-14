@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（机械设备安全技术）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>42、（ ）的主要作用有过载限制，即过载时，限载器自动停止伸臂、
+下变幅、起升动作，允许缩臂、上变幅、落钩动作。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.力矩限位器<br>
+		<label><input type="radio" name="answer" value="B">B.起升高度限位器<br>
+		<label><input type="radio" name="answer" value="C">C.臂架角度指示器<br>
+		<label><input type="radio" name="answer" value="D">D.防臂架后倾装置<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "43.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（机械设备安全技术）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>48、使用叉车，必须按照出厂使用说明书中的技术性能、承载能力和
+使用条件进行操作和使用，严禁超载作业或任意扩大使用范围。下列
+针对叉车安全操作的要求中，正确的是（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.以内燃机为动力的叉车严禁进入易燃易爆仓库内部作业<br>
+		<label><input type="radio" name="answer" value="B">B.不得使用两辆叉车同时装卸同一辆货车<br>
+		<label><input type="radio" name="answer" value="C">C.叉运物件时，当物件提升离地后，将起落架放平后方可行驶<br>
+		<label><input type="radio" name="answer" value="D">D.任何情况下叉车都不得叉装重量不明的物件<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "49.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>

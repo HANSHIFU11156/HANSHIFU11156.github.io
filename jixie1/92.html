@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（机械设备安全技术）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>92、以下不属于起重吊装作业人员的行为有（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.负责载荷计算和索具的正确选择<br>
+		<label><input type="radio" name="answer" value="B">B.对可能出现的事故采取必要的防范措施<br>
+		<label><input type="radio" name="answer" value="C">C.佩戴鲜明的标志和特殊颜色的安全帽<br>
+		<label><input type="radio" name="answer" value="D">D.建议起重司机对手柄的选择<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "D") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是D。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "93.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
