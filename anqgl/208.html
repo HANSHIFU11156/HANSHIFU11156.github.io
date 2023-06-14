@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单选题_（安全管理）</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h2 { font-size: 24px; }
+		p { font-size: 30px; }
+		label { font-size: 30px; }
+		input[type="radio"] {
+			font-size: 70px;
+			transform: scale(2); /* 将按钮缩放为原来的两倍 */
+			margin-right: 10px; /* 调整按钮之间的距离 */
+		}
+		button[type="submit"] { font-size: 30px; }
+		button[id="next-btn"] { font-size: 30px; }
+	</style>
+</head>
+<body>
+	<h2>208、某建设项目施工单位在挖深基坑危险性较大的施工作业前，按
+照相关要求，编制完成了专项施工方案，并聘请相关专家进行方案审
+查。审查意见提出方案中应增加安全验收内容。根据建设项目“危大
+工程”安全管理要求，关于修改完善后的专项施工方案管理的说法，
+正确的是（ ）。
+</h2>
+	<form onsubmit="return checkAnswer();" method="post" id="myForm">
+		<label><input type="radio" name="answer" value="A">A.施工单位技术负责人和总监理工程师签字后实施<br>
+		<label><input type="radio" name="answer" value="B">B.施工单位安全总监和总监理工程师签字后实施<br>
+		<label><input type="radio" name="answer" value="C">C.项目经理和安全总监签字并组织实施<br>
+		<label><input type="radio" name="answer" value="D">D.报备建设方安全总监和施工单位负责人签字后实施<br>
+		<label><button type="submit">提交</button>
+		<button id="next-btn" onclick="nextQuestion();">下一题</button>
+	</form>
+	<p id="result"></p>
+
+	<script type="text/javascript">
+		function checkAnswer() {
+			event.preventDefault();
+			var form = document.getElementById("myForm");
+			if (form.elements["answer"].value == "A") {
+				document.getElementById("result").innerHTML = "<span style='color: green;'>回答正确！</span>";
+			} else {
+				document.getElementById("result").innerHTML = "<span style='color: red;'>回答错误。正确答案是A。</span>";
+			}
+			form.elements["answer"].checked = false;
+			return false;
+		}
+		function nextQuestion() {
+			location.href = "209.html"; // 跳转到下一题的网页地址
+		}
+	</script>
+</body>
+</html>
